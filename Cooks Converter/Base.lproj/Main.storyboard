@@ -1,25 +1,493 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="FZc-nR-7Mg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Converter Main Page View Controller-->
+        <scene sceneID="dhj-xY-gDN">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SMX-M3-DZb" customClass="ConverterMainPageViewController" customModule="Cooks_Converter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="afY-en-v2D"/>
+                        <viewControllerLayoutGuide type="bottom" id="eAj-Gf-yDr"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="Fyd-DV-Zz6" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tb-vC-Niu">
+                                <rect key="frame" x="166" y="163" width="138" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="35"/>
+                                <state key="normal" title="tsp">
+                                    <color key="titleColor" red="0.51134008289999999" green="0.03560984146" blue="0.15114335600000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.31569491099543384" green="0.35022178682382626" blue="0.69483418367346939" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tspButtonPressed:" destination="SMX-M3-DZb" eventType="touchUpInside" id="X4T-GA-FwE"/>
+                                    <segue destination="Fcx-H9-NjR" kind="push" identifier="showEquivalenciesSegue" id="KIo-9P-hhQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdA-01-KFL">
+                                <rect key="frame" x="166" y="263" width="138" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="35"/>
+                                <state key="normal" title="cup">
+                                    <color key="titleColor" red="0.51134008289999999" green="0.03560984146" blue="0.15114335600000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3PV-Hz-MbJ" appends="YES" id="clP-uN-dlB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjH-eO-QWw">
+                                <rect key="frame" x="17" y="263" width="138" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="35"/>
+                                <state key="normal" title="tbsp">
+                                    <color key="titleColor" red="0.51134008289999999" green="0.03560984146" blue="0.15114335600000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Uam-cr-2FK" appends="YES" id="cGC-vU-ZaB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZQ-eG-eav">
+                                <rect key="frame" x="166" y="363" width="138" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="35"/>
+                                <state key="normal" title="quart">
+                                    <color key="titleColor" red="0.51134008289999999" green="0.03560984146" blue="0.15114335600000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Roe-gM-Ksi" appends="YES" id="oGy-hH-Non"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7E-xd-shF">
+                                <rect key="frame" x="17" y="363" width="138" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="35"/>
+                                <state key="normal" title="pint">
+                                    <color key="titleColor" red="0.51134008289999999" green="0.03560984146" blue="0.15114335600000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="CiA-3d-9dT" appends="YES" id="btO-2r-fpY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Io-D4-cH4">
+                                <rect key="frame" x="17" y="463" width="138" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="35"/>
+                                <state key="normal" title="fl. oz">
+                                    <color key="titleColor" red="0.51134008289999999" green="0.03560984146" blue="0.15114335600000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fYr-6U-9a6" appends="YES" id="KA6-mD-9md"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cooking Equivalencies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdg-ty-P6s">
+                                <rect key="frame" x="31" y="69" width="259" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="FFI-uk-2G1"/>
+                                    <constraint firstAttribute="height" constant="32" id="L1d-Tk-VAj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jb3-pv-3VY">
+                                <rect key="frame" x="17" y="163" width="90" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="4vE-yn-rHw"/>
+                                    <constraint firstAttribute="height" constant="21" id="FBw-D7-OI2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number" textAlignment="center" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Mk7-I9-8JO">
+                                <rect key="frame" x="31" y="213" width="114" height="30"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="backgroundTap:" destination="SMX-M3-DZb" eventType="touchDown" id="1th-lI-8NS"/>
+                                    <action selector="textFieldDoneEditing:" destination="SMX-M3-DZb" eventType="editingDidEndOnExit" id="5yf-WB-dRq"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ju-1Z-rja">
+                                <rect key="frame" x="166" y="463" width="138" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="35"/>
+                                <state key="normal" title="gallon">
+                                    <color key="titleColor" red="0.51134008289999999" green="0.03560984146" blue="0.15114335600000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bOk-Mj-tV9" appends="YES" id="WtG-O8-hci"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.9867150010164123" blue="0.84057560488317562" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="zjH-eO-QWw" firstAttribute="leading" secondItem="Fyd-DV-Zz6" secondAttribute="leadingMargin" constant="1" id="43M-gk-uBp"/>
+                            <constraint firstItem="eAj-Gf-yDr" firstAttribute="top" secondItem="4ju-1Z-rja" secondAttribute="bottom" constant="25" id="7Eb-ex-PTB"/>
+                            <constraint firstItem="zjH-eO-QWw" firstAttribute="top" secondItem="afY-en-v2D" secondAttribute="bottom" constant="199" id="CwW-yy-iaO"/>
+                            <constraint firstItem="3tb-vC-Niu" firstAttribute="trailing" secondItem="Fyd-DV-Zz6" secondAttribute="trailingMargin" id="Ddp-ic-B9j"/>
+                            <constraint firstItem="eAj-Gf-yDr" firstAttribute="top" secondItem="5Io-D4-cH4" secondAttribute="bottom" constant="25" id="ENV-wf-VIO"/>
+                            <constraint firstAttribute="centerX" secondItem="Tdg-ty-P6s" secondAttribute="centerX" id="IsB-bd-oaE"/>
+                            <constraint firstItem="zjH-eO-QWw" firstAttribute="top" secondItem="Mk7-I9-8JO" secondAttribute="bottom" constant="20" id="LkC-Gy-gQH"/>
+                            <constraint firstItem="oZQ-eG-eav" firstAttribute="height" secondItem="b7E-xd-shF" secondAttribute="height" id="MV3-CU-ned"/>
+                            <constraint firstItem="Mk7-I9-8JO" firstAttribute="leading" secondItem="Fyd-DV-Zz6" secondAttribute="leadingMargin" constant="15" id="OMx-wl-o33"/>
+                            <constraint firstItem="5Io-D4-cH4" firstAttribute="leading" secondItem="Fyd-DV-Zz6" secondAttribute="leadingMargin" constant="1" id="QNf-nk-hcF"/>
+                            <constraint firstItem="oZQ-eG-eav" firstAttribute="height" secondItem="5Io-D4-cH4" secondAttribute="height" id="U2e-Sh-CX5"/>
+                            <constraint firstItem="jb3-pv-3VY" firstAttribute="leading" secondItem="Fyd-DV-Zz6" secondAttribute="leadingMargin" constant="1" id="VBP-vq-jpK"/>
+                            <constraint firstItem="oZQ-eG-eav" firstAttribute="width" secondItem="3tb-vC-Niu" secondAttribute="width" id="Yvd-2A-MSJ"/>
+                            <constraint firstItem="oZQ-eG-eav" firstAttribute="width" secondItem="4ju-1Z-rja" secondAttribute="width" id="ZpC-Zx-4uy"/>
+                            <constraint firstItem="eAj-Gf-yDr" firstAttribute="top" secondItem="5Io-D4-cH4" secondAttribute="bottom" constant="25" id="afc-31-cEe"/>
+                            <constraint firstItem="Tdg-ty-P6s" firstAttribute="top" secondItem="afY-en-v2D" secondAttribute="bottom" constant="5" id="ah0-zZ-Xqt"/>
+                            <constraint firstItem="GdA-01-KFL" firstAttribute="top" secondItem="3tb-vC-Niu" secondAttribute="bottom" constant="20" id="b7H-Nb-QF2"/>
+                            <constraint firstItem="b7E-xd-shF" firstAttribute="leading" secondItem="Fyd-DV-Zz6" secondAttribute="leadingMargin" constant="1" id="bWi-es-Yrq"/>
+                            <constraint firstItem="oZQ-eG-eav" firstAttribute="width" secondItem="GdA-01-KFL" secondAttribute="width" id="cAo-xd-2KS"/>
+                            <constraint firstItem="oZQ-eG-eav" firstAttribute="height" secondItem="3tb-vC-Niu" secondAttribute="height" id="dXa-cz-SJO"/>
+                            <constraint firstItem="oZQ-eG-eav" firstAttribute="top" secondItem="GdA-01-KFL" secondAttribute="bottom" constant="20" id="dZR-yc-EvK"/>
+                            <constraint firstItem="b7E-xd-shF" firstAttribute="top" secondItem="zjH-eO-QWw" secondAttribute="bottom" constant="20" id="dmy-1O-dgp"/>
+                            <constraint firstItem="GdA-01-KFL" firstAttribute="trailing" secondItem="Fyd-DV-Zz6" secondAttribute="trailingMargin" id="eIC-aM-slf"/>
+                            <constraint firstItem="oZQ-eG-eav" firstAttribute="height" secondItem="GdA-01-KFL" secondAttribute="height" id="fi9-qB-tvX"/>
+                            <constraint firstItem="4ju-1Z-rja" firstAttribute="top" secondItem="oZQ-eG-eav" secondAttribute="bottom" constant="20" id="jwX-fJ-Ehb"/>
+                            <constraint firstItem="4ju-1Z-rja" firstAttribute="trailing" secondItem="Fyd-DV-Zz6" secondAttribute="trailingMargin" id="lu6-To-nWE"/>
+                            <constraint firstItem="3tb-vC-Niu" firstAttribute="top" secondItem="afY-en-v2D" secondAttribute="bottom" constant="99" id="mpt-m7-WD8"/>
+                            <constraint firstItem="oZQ-eG-eav" firstAttribute="height" secondItem="zjH-eO-QWw" secondAttribute="height" id="mtQ-Sy-0Gg"/>
+                            <constraint firstItem="oZQ-eG-eav" firstAttribute="width" secondItem="b7E-xd-shF" secondAttribute="width" id="p5z-PP-a18"/>
+                            <constraint firstItem="oZQ-eG-eav" firstAttribute="height" secondItem="4ju-1Z-rja" secondAttribute="height" id="q9h-id-kez"/>
+                            <constraint firstItem="5Io-D4-cH4" firstAttribute="leading" secondItem="Fyd-DV-Zz6" secondAttribute="leadingMargin" constant="1" id="rdu-ns-3pv"/>
+                            <constraint firstItem="oZQ-eG-eav" firstAttribute="width" secondItem="zjH-eO-QWw" secondAttribute="width" id="ror-kv-ZYl"/>
+                            <constraint firstItem="Mk7-I9-8JO" firstAttribute="top" secondItem="jb3-pv-3VY" secondAttribute="bottom" constant="29" id="tzw-1l-8FG"/>
+                            <constraint firstItem="4ju-1Z-rja" firstAttribute="leading" secondItem="5Io-D4-cH4" secondAttribute="trailing" constant="11" id="urK-rV-3xg"/>
+                            <constraint firstItem="oZQ-eG-eav" firstAttribute="trailing" secondItem="Fyd-DV-Zz6" secondAttribute="trailingMargin" id="x8h-me-y1f"/>
+                            <constraint firstItem="oZQ-eG-eav" firstAttribute="width" secondItem="5Io-D4-cH4" secondAttribute="width" id="xTD-9x-Qap"/>
+                            <constraint firstItem="5Io-D4-cH4" firstAttribute="top" secondItem="b7E-xd-shF" secondAttribute="bottom" constant="20" id="zUj-MA-SVG"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nP3-Pf-QJP"/>
+                    <connections>
+                        <outlet property="cupButton" destination="GdA-01-KFL" id="l2g-AO-wYX"/>
+                        <outlet property="flozButton" destination="5Io-D4-cH4" id="s70-Z6-Ys7"/>
+                        <outlet property="gallonButton" destination="4ju-1Z-rja" id="X2g-0Z-bBZ"/>
+                        <outlet property="numberField" destination="Mk7-I9-8JO" id="a3K-q6-LuT"/>
+                        <outlet property="pintButton" destination="b7E-xd-shF" id="Mr5-Gv-jAu"/>
+                        <outlet property="quartButton" destination="oZQ-eG-eav" id="JTW-bB-Uqk"/>
+                        <outlet property="tbspButton" destination="zjH-eO-QWw" id="k8i-g8-lAe"/>
+                        <outlet property="tspButton" destination="3tb-vC-Niu" id="ZKU-Ay-IrZ"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q9W-0l-pdy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Uam-cr-2FK">
+                    <connections>
+                        <action selector="showEquivalencies:" destination="SMX-M3-DZb" id="S3H-ZD-PrX"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="3PV-Hz-MbJ">
+                    <connections>
+                        <action selector="showEquivalencies:" destination="SMX-M3-DZb" id="uK8-pN-dZB"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="CiA-3d-9dT">
+                    <connections>
+                        <action selector="showEquivalencies:" destination="SMX-M3-DZb" id="FYb-u6-Gwt"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Roe-gM-Ksi">
+                    <connections>
+                        <action selector="showEquivalencies:" destination="SMX-M3-DZb" id="4Lu-b8-8or"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="fYr-6U-9a6">
+                    <connections>
+                        <action selector="showEquivalencies:" destination="SMX-M3-DZb" id="6sy-sd-6Bj"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="bOk-Mj-tV9">
+                    <connections>
+                        <action selector="showEquivalencies:" destination="SMX-M3-DZb" id="NN9-1B-5eC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="837" y="518"/>
+        </scene>
+        <!--Equivalencies View Controller-->
+        <scene sceneID="qVF-Ko-XHx">
+            <objects>
+                <viewController id="Fcx-H9-NjR" customClass="EquivalenciesViewController" customModule="Cooks_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8XL-by-dBj"/>
+                        <viewControllerLayoutGuide type="bottom" id="pv9-1u-5Ko"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kjm-2g-Hic">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Amount] is equal to: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yod-79-LVY">
+                                <rect key="frame" x="37" y="63" width="246" height="32"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="teaspoons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6U6-ky-LAA">
+                                <rect key="frame" x="157" y="154" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BOY-bn-6Mg"/>
+                                    <constraint firstAttribute="width" constant="120" id="YM2-LM-ksY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tablespoons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bU9-9E-tvV">
+                                <rect key="frame" x="157" y="205" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="01n-yg-oWd"/>
+                                    <constraint firstAttribute="height" constant="30" id="csM-rI-Cyf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cups" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GE3-rE-gry">
+                                <rect key="frame" x="157" y="256" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="QfG-d3-7e7"/>
+                                    <constraint firstAttribute="height" constant="30" id="f55-Hp-T2b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pints" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWN-UC-Yus">
+                                <rect key="frame" x="157" y="312" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="TAV-yP-DUR"/>
+                                    <constraint firstAttribute="height" constant="30" id="eAo-8N-wRs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gallons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5d-VH-uuj">
+                                <rect key="frame" x="157" y="424" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aLG-Hg-bR0"/>
+                                    <constraint firstAttribute="width" constant="120" id="yIt-JZ-umC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fluid ounces" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OP-SM-EK4">
+                                <rect key="frame" x="157" y="480" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="cqj-0V-7SG"/>
+                                    <constraint firstAttribute="height" constant="30" id="uo5-oa-tOj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NUM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrn-EA-mHl">
+                                <rect key="frame" x="37" y="210" width="54" height="21"/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NUM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9S-n8-rT3">
+                                <rect key="frame" x="37" y="261" width="54" height="21"/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NUM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3S-vi-eDm">
+                                <rect key="frame" x="37" y="317" width="54" height="21"/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NUM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfG-bU-Kkx">
+                                <rect key="frame" x="37" y="373" width="54" height="21"/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NUM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMr-gG-dvl">
+                                <rect key="frame" x="37" y="429" width="54" height="21"/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NUM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYG-bS-yzh">
+                                <rect key="frame" x="37" y="482" width="54" height="21"/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quarts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cL-Xu-DwJ">
+                                <rect key="frame" x="157" y="368" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hXB-kv-9m9"/>
+                                    <constraint firstAttribute="width" constant="120" id="lvz-A9-usQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NUM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxc-Bp-zvO">
+                                <rect key="frame" x="37" y="152" width="54" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="CBb-Uh-qjR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.98671500099999998" blue="0.84057560490000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wMr-gG-dvl" firstAttribute="top" secondItem="MfG-bU-Kkx" secondAttribute="bottom" constant="35" id="107-m9-leC"/>
+                            <constraint firstItem="MfG-bU-Kkx" firstAttribute="top" secondItem="v3S-vi-eDm" secondAttribute="bottom" constant="35" id="1Mq-1o-nTp"/>
+                            <constraint firstItem="9OP-SM-EK4" firstAttribute="top" secondItem="n5d-VH-uuj" secondAttribute="bottom" constant="26" id="1gp-hM-j1s"/>
+                            <constraint firstItem="dYG-bS-yzh" firstAttribute="baseline" secondItem="9OP-SM-EK4" secondAttribute="baseline" constant="-7" id="3Pq-CD-GUs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9OP-SM-EK4" secondAttribute="trailing" constant="27" id="4U3-B7-K8r"/>
+                            <constraint firstItem="bU9-9E-tvV" firstAttribute="baseline" secondItem="mrn-EA-mHl" secondAttribute="baseline" constant="4" id="4ZX-3i-7PZ"/>
+                            <constraint firstItem="MfG-bU-Kkx" firstAttribute="baseline" secondItem="4cL-Xu-DwJ" secondAttribute="baseline" constant="-4" id="5mC-AM-JFK"/>
+                            <constraint firstItem="C9S-n8-rT3" firstAttribute="top" secondItem="mrn-EA-mHl" secondAttribute="bottom" constant="30" id="7ZF-cn-oKw"/>
+                            <constraint firstItem="bU9-9E-tvV" firstAttribute="top" secondItem="6U6-ky-LAA" secondAttribute="bottom" constant="21" id="8ij-LY-k72"/>
+                            <constraint firstItem="n5d-VH-uuj" firstAttribute="leading" secondItem="GE3-rE-gry" secondAttribute="leading" id="8vX-eV-iSm"/>
+                            <constraint firstItem="mrn-EA-mHl" firstAttribute="top" secondItem="cxc-Bp-zvO" secondAttribute="bottom" constant="24" id="9uD-B6-gCu"/>
+                            <constraint firstItem="C9S-n8-rT3" firstAttribute="leading" secondItem="cxc-Bp-zvO" secondAttribute="leading" id="BLM-PE-UXo"/>
+                            <constraint firstAttribute="centerX" secondItem="yod-79-LVY" secondAttribute="centerX" id="BUN-f0-3Zl"/>
+                            <constraint firstItem="v3S-vi-eDm" firstAttribute="top" secondItem="C9S-n8-rT3" secondAttribute="bottom" constant="35" id="CGf-yj-AKp"/>
+                            <constraint firstItem="fWN-UC-Yus" firstAttribute="baseline" secondItem="v3S-vi-eDm" secondAttribute="baseline" constant="4" id="HOI-rw-Qln"/>
+                            <constraint firstItem="cxc-Bp-zvO" firstAttribute="leading" secondItem="kjm-2g-Hic" secondAttribute="leadingMargin" constant="21" id="JZL-Uu-aKk"/>
+                            <constraint firstItem="n5d-VH-uuj" firstAttribute="leading" secondItem="fWN-UC-Yus" secondAttribute="leading" id="Jxd-Ba-wD6"/>
+                            <constraint firstItem="cxc-Bp-zvO" firstAttribute="top" secondItem="yod-79-LVY" secondAttribute="bottom" constant="57" id="Lc7-Yy-UUH"/>
+                            <constraint firstItem="dYG-bS-yzh" firstAttribute="leading" secondItem="kjm-2g-Hic" secondAttribute="leadingMargin" constant="21" id="OXh-2d-697"/>
+                            <constraint firstItem="pv9-1u-5Ko" firstAttribute="top" secondItem="9OP-SM-EK4" secondAttribute="bottom" constant="58" id="RwC-Zf-Wfd"/>
+                            <constraint firstItem="C9S-n8-rT3" firstAttribute="leading" secondItem="wMr-gG-dvl" secondAttribute="leading" id="UFm-HC-jnI"/>
+                            <constraint firstItem="yod-79-LVY" firstAttribute="top" secondItem="8XL-by-dBj" secondAttribute="bottom" constant="-1" id="VAV-6y-QXq"/>
+                            <constraint firstItem="C9S-n8-rT3" firstAttribute="leading" secondItem="v3S-vi-eDm" secondAttribute="leading" id="WfT-O7-X0T"/>
+                            <constraint firstItem="4cL-Xu-DwJ" firstAttribute="top" secondItem="fWN-UC-Yus" secondAttribute="bottom" constant="26" id="WmM-bd-frI"/>
+                            <constraint firstItem="C9S-n8-rT3" firstAttribute="leading" secondItem="MfG-bU-Kkx" secondAttribute="leading" id="Y6h-H9-xoQ"/>
+                            <constraint firstItem="n5d-VH-uuj" firstAttribute="leading" secondItem="4cL-Xu-DwJ" secondAttribute="leading" id="a4W-Q7-JRw"/>
+                            <constraint firstItem="C9S-n8-rT3" firstAttribute="leading" secondItem="mrn-EA-mHl" secondAttribute="leading" id="aBu-vc-Atg"/>
+                            <constraint firstItem="GE3-rE-gry" firstAttribute="baseline" secondItem="C9S-n8-rT3" secondAttribute="baseline" constant="4" id="bVZ-My-cf7"/>
+                            <constraint firstItem="n5d-VH-uuj" firstAttribute="leading" secondItem="9OP-SM-EK4" secondAttribute="leading" id="bXI-pN-utg"/>
+                            <constraint firstItem="fWN-UC-Yus" firstAttribute="top" secondItem="GE3-rE-gry" secondAttribute="bottom" constant="26" id="byO-i6-bC4"/>
+                            <constraint firstItem="dYG-bS-yzh" firstAttribute="top" secondItem="wMr-gG-dvl" secondAttribute="bottom" constant="32" id="cfg-F4-iNu"/>
+                            <constraint firstItem="wMr-gG-dvl" firstAttribute="baseline" secondItem="n5d-VH-uuj" secondAttribute="baseline" constant="-4" id="eAX-cf-KmN"/>
+                            <constraint firstItem="n5d-VH-uuj" firstAttribute="leading" secondItem="6U6-ky-LAA" secondAttribute="leading" id="fYU-h9-nW6"/>
+                            <constraint firstItem="6U6-ky-LAA" firstAttribute="baseline" secondItem="cxc-Bp-zvO" secondAttribute="baseline" constant="-2" id="hrf-FM-hAg"/>
+                            <constraint firstItem="n5d-VH-uuj" firstAttribute="top" secondItem="4cL-Xu-DwJ" secondAttribute="bottom" constant="26" id="pcS-BZ-3nn"/>
+                            <constraint firstItem="GE3-rE-gry" firstAttribute="top" secondItem="bU9-9E-tvV" secondAttribute="bottom" constant="21" id="qLt-kK-CXU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yod-79-LVY" secondAttribute="trailing" constant="21" id="uLV-8P-hvg"/>
+                            <constraint firstItem="n5d-VH-uuj" firstAttribute="leading" secondItem="bU9-9E-tvV" secondAttribute="leading" id="xF2-bt-KCH"/>
+                            <constraint firstItem="yod-79-LVY" firstAttribute="leading" secondItem="kjm-2g-Hic" secondAttribute="leadingMargin" constant="21" id="xJB-XU-X5G"/>
+                            <constraint firstItem="wMr-gG-dvl" firstAttribute="leading" secondItem="kjm-2g-Hic" secondAttribute="leadingMargin" constant="21" id="zg5-1d-bZX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2QS-sx-RWf"/>
+                    <connections>
+                        <outlet property="amountLabel" destination="yod-79-LVY" id="sB5-8E-hlm"/>
+                        <outlet property="cupNum" destination="C9S-n8-rT3" id="ySg-7v-MiY"/>
+                        <outlet property="flozNum" destination="dYG-bS-yzh" id="gVC-m9-G9F"/>
+                        <outlet property="gallonNum" destination="wMr-gG-dvl" id="2L8-u3-Goc"/>
+                        <outlet property="pintNum" destination="v3S-vi-eDm" id="c5G-Kf-NOw"/>
+                        <outlet property="quartNum" destination="MfG-bU-Kkx" id="wUv-O3-zd8"/>
+                        <outlet property="tbspNum" destination="mrn-EA-mHl" id="NQg-BI-21e"/>
+                        <outlet property="tspNum" destination="cxc-Bp-zvO" id="Yce-XD-FCT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RDd-6O-nCy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1219" y="521"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="inj-GE-JZt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FZc-nR-7Mg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VdP-hA-Rfq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SMX-M3-DZb" kind="relationship" relationship="rootViewController" id="a0o-bf-7Qe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fer-kM-wGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="518"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

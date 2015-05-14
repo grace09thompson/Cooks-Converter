@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2E58A99D1B04167A00F4CF53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58A99C1B04167A00F4CF53 /* AppDelegate.swift */; };
-		2E58A99F1B04167A00F4CF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58A99E1B04167A00F4CF53 /* ViewController.swift */; };
 		2E58A9A21B04167A00F4CF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E58A9A01B04167A00F4CF53 /* Main.storyboard */; };
 		2E58A9A41B04167A00F4CF53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E58A9A31B04167A00F4CF53 /* Images.xcassets */; };
 		2E58A9A71B04167A00F4CF53 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E58A9A51B04167A00F4CF53 /* LaunchScreen.xib */; };
 		2E58A9B31B04167A00F4CF53 /* Cooks_ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58A9B21B04167A00F4CF53 /* Cooks_ConverterTests.swift */; };
+		2E58A9BD1B04170900F4CF53 /* ConverterMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58A9BC1B04170900F4CF53 /* ConverterMainPageViewController.swift */; };
+		2EADA2ED1B045867007A440F /* EquivalenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADA2EC1B045867007A440F /* EquivalenciesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +30,14 @@
 		2E58A9971B04167900F4CF53 /* Cooks Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cooks Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E58A99B1B04167A00F4CF53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E58A99C1B04167A00F4CF53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2E58A99E1B04167A00F4CF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2E58A9A11B04167A00F4CF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E58A9A31B04167A00F4CF53 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2E58A9A61B04167A00F4CF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2E58A9AC1B04167A00F4CF53 /* Cooks ConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cooks ConverterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E58A9B11B04167A00F4CF53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E58A9B21B04167A00F4CF53 /* Cooks_ConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cooks_ConverterTests.swift; sourceTree = "<group>"; };
+		2E58A9BC1B04170900F4CF53 /* ConverterMainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConverterMainPageViewController.swift; path = ../ConverterMainPageViewController.swift; sourceTree = "<group>"; };
+		2EADA2EC1B045867007A440F /* EquivalenciesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EquivalenciesViewController.swift; path = ../EquivalenciesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				2E58A99C1B04167A00F4CF53 /* AppDelegate.swift */,
-				2E58A99E1B04167A00F4CF53 /* ViewController.swift */,
+				2E58A9BC1B04170900F4CF53 /* ConverterMainPageViewController.swift */,
+				2EADA2EC1B045867007A440F /* EquivalenciesViewController.swift */,
 				2E58A9A01B04167A00F4CF53 /* Main.storyboard */,
 				2E58A9A31B04167A00F4CF53 /* Images.xcassets */,
 				2E58A9A51B04167A00F4CF53 /* LaunchScreen.xib */,
@@ -212,8 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E58A99F1B04167A00F4CF53 /* ViewController.swift in Sources */,
+				2EADA2ED1B045867007A440F /* EquivalenciesViewController.swift in Sources */,
 				2E58A99D1B04167A00F4CF53 /* AppDelegate.swift in Sources */,
+				2E58A9BD1B04170900F4CF53 /* ConverterMainPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +411,7 @@
 				2E58A9B81B04167A00F4CF53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2E58A9B91B04167A00F4CF53 /* Build configuration list for PBXNativeTarget "Cooks ConverterTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				2E58A9BB1B04167A00F4CF53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
