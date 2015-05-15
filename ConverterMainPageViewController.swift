@@ -12,8 +12,10 @@ import QuartzCore
 
 class ConverterMainPageViewController: UIViewController {
     
-    var number: Int!
+    var number: String!
     var measurementType: String!
+    
+    var buttonsArray: [UIButton] = []
     
     @IBOutlet weak var tspButton: UIButton!
     @IBOutlet weak var tbspButton: UIButton!
@@ -28,20 +30,13 @@ class ConverterMainPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tspButton.layer.borderWidth = 1
-        tspButton.layer.borderColor = UIColor.blackColor().CGColor
-        tbspButton.layer.borderWidth = 1
-        tbspButton.layer.borderColor = UIColor.blackColor().CGColor
-        cupButton.layer.borderWidth = 1
-        cupButton.layer.borderColor = UIColor.blackColor().CGColor
-        pintButton.layer.borderWidth = 1
-        pintButton.layer.borderColor = UIColor.blackColor().CGColor
-        quartButton.layer.borderWidth = 1
-        quartButton.layer.borderColor = UIColor.blackColor().CGColor
-        gallonButton.layer.borderWidth = 1
-        gallonButton.layer.borderColor = UIColor.blackColor().CGColor
-        flozButton.layer.borderWidth = 1
-        flozButton.layer.borderColor = UIColor.blackColor().CGColor
+        buttonsArray += [tspButton, tbspButton, cupButton, pintButton, quartButton, gallonButton, flozButton]
+        
+        for index in 0..<buttonsArray.count {
+            let button = buttonsArray[index]
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.blackColor().CGColor
+        }
         
     }
 
@@ -51,13 +46,15 @@ class ConverterMainPageViewController: UIViewController {
     }
     
     @IBAction func textFieldDoneEditing(sender: UITextField) {
-        number = numberField.text.toInt()!
-     
+        //ConversionAccess.amount = numberField.text
+        //number = ConversionAccess.amount
         sender.resignFirstResponder()
     }
     
     
     @IBAction func backgroundTap(sender: UIControl) {
+        ConversionAccess.amount = numberField.text
+        number = ConversionAccess.amount
         numberField.resignFirstResponder()
     }
     
@@ -74,8 +71,7 @@ class ConverterMainPageViewController: UIViewController {
         }
     }
     
-    @IBAction func showEquivalencies(sender: AnyObject) {
-        println(number)
+    @IBAction func showEquivalencies(sender: UIButton) {
     
         performSegueWithIdentifier("showEquivalenciesSegue", sender: sender)
     }

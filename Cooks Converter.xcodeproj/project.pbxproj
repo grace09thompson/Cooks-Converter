@@ -14,6 +14,7 @@
 		2E58A9B31B04167A00F4CF53 /* Cooks_ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58A9B21B04167A00F4CF53 /* Cooks_ConverterTests.swift */; };
 		2E58A9BD1B04170900F4CF53 /* ConverterMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58A9BC1B04170900F4CF53 /* ConverterMainPageViewController.swift */; };
 		2EADA2ED1B045867007A440F /* EquivalenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EADA2EC1B045867007A440F /* EquivalenciesViewController.swift */; };
+		2EC39C561B0521D0000458F6 /* ConversionAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC39C551B0521D0000458F6 /* ConversionAccess.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		2E58A9B21B04167A00F4CF53 /* Cooks_ConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cooks_ConverterTests.swift; sourceTree = "<group>"; };
 		2E58A9BC1B04170900F4CF53 /* ConverterMainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConverterMainPageViewController.swift; path = ../ConverterMainPageViewController.swift; sourceTree = "<group>"; };
 		2EADA2EC1B045867007A440F /* EquivalenciesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EquivalenciesViewController.swift; path = ../EquivalenciesViewController.swift; sourceTree = "<group>"; };
+		2EC39C551B0521D0000458F6 /* ConversionAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversionAccess.swift; path = ../ConversionAccess.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				2E58A99C1B04167A00F4CF53 /* AppDelegate.swift */,
+				2EC39C551B0521D0000458F6 /* ConversionAccess.swift */,
 				2E58A9BC1B04170900F4CF53 /* ConverterMainPageViewController.swift */,
 				2EADA2EC1B045867007A440F /* EquivalenciesViewController.swift */,
 				2E58A9A01B04167A00F4CF53 /* Main.storyboard */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EADA2ED1B045867007A440F /* EquivalenciesViewController.swift in Sources */,
+				2EC39C561B0521D0000458F6 /* ConversionAccess.swift in Sources */,
 				2E58A99D1B04167A00F4CF53 /* AppDelegate.swift in Sources */,
 				2E58A9BD1B04170900F4CF53 /* ConverterMainPageViewController.swift in Sources */,
 			);

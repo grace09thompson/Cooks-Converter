@@ -29,8 +29,10 @@ class EquivalenciesViewController: UIViewController {
     @IBOutlet weak var flozNum: UILabel!
     
     
-    var amountToPass: Int!
+    var amountToPass: String!
     var amountType: String!
+    var amount: Double!
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +40,22 @@ class EquivalenciesViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         println(amountType)
+        println(amountToPass)
+        
+        amount = (amountToPass as NSString).doubleValue //convert String from numberField to Double for calculations
+        
+        //var selectedType = measurements[amountType]
+        //println(selectedType![0])
+        //var measurementsDictionary = ConversionAccess.measurements
+        //var calculateAmounts = measurementsDictionary[amountType]
+        
+       // println(calculateAmounts![0])
+        
         
         //var selectedType = measurements[amountType]
         
         self.amountLabel.text = "\(amountToPass) \(amountType) is equal to:"
-        //self.tspNum.text = String(amountToPass * selectedType![0])
+        //self.tspNum.text = String(amount * selectedType![0])
     }
 
     override func didReceiveMemoryWarning() {
