@@ -25,11 +25,23 @@ class ConverterMainPageViewController: UIViewController {
     @IBOutlet weak var gallonButton: UIButton!
     @IBOutlet weak var flozButton: UIButton!
     
+    
+    
     @IBOutlet weak var numberField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //officially label each button for transfer purposes
+        tspButton.titleLabel?.text = "tsp"
+        tbspButton.titleLabel?.text = "tbsp"
+        cupButton.titleLabel?.text = "cup"
+        pintButton.titleLabel?.text = "pint"
+        quartButton.titleLabel?.text = "quart"
+        gallonButton.titleLabel?.text = "gallon"
+        flozButton.titleLabel?.text = "fl. oz"
+        
+        //set up attributes of all buttons in view through for loop
         buttonsArray += [tspButton, tbspButton, cupButton, pintButton, quartButton, gallonButton, flozButton]
         
         for index in 0..<buttonsArray.count {
@@ -58,17 +70,35 @@ class ConverterMainPageViewController: UIViewController {
         numberField.resignFirstResponder()
     }
     
-    @IBAction func tspButtonPressed(sender: UIButton) {
-        measurementType = "tsp"
-    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showEquivalenciesSegue" {
-            let equivalenciesDetailController = segue.destinationViewController as EquivalenciesViewController
-            equivalenciesDetailController.amountToPass = number
-            equivalenciesDetailController.amountType = measurementType
-            
+        let equivalenciesDetailController = segue.destinationViewController as EquivalenciesViewController
+        
+        if let buttonTitle = (sender as? UIButton)?.titleLabel?.text {
+            measurementType = buttonTitle
+            ConversionAccess.measurementType = measurementType
+            //equivalenciesDetailController.amountType = buttonTitle
         }
+        equivalenciesDetailController.amountToPass = number
+        println(number)
+        println(measurementType)
+        
+        
+        //if segue.identifier == "showEquivalenciesSegue" {
+            
+            //let buttonPressed = sender!.view as UIButton
+            //if let index = find(buttonsArray, buttonPressed) {
+                //let equivalenciesDetailController = segue.destinationViewController as EquivalenciesViewController
+                //pass information to the next view for calculations
+               // equivalenciesDetailController.amountToPass = number
+               // equivalenciesDetailController.amountType = buttonPressed
+                
+               // println(number)
+               // println(buttonPressed)
+          //  }
+            
+       // }
     }
     
     @IBAction func showEquivalencies(sender: UIButton) {

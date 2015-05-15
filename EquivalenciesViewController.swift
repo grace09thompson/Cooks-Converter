@@ -10,14 +10,6 @@ import UIKit
 
 class EquivalenciesViewController: UIViewController {
     
-    var measurements = ["tsp" : [1, 1/3, 1/48, 1/96, 1/192, 1/768, 1/6],
-        "tbsp" : [3, 1, 1/16, 1/32, 1/64, 1/256, 1/2],
-        "cup" : [48, 16, 1, 1/2, 1/4, 1/16, 8],
-        "pint" : [96, 32, 2, 1, 1/2, 1/8, 16],
-        "quart" : [192, 64, 4, 2, 1, 1/4, 32],
-        "gallon" : [768, 256, 16, 8, 4, 1, 128],
-        "floz" : [6, 2, 1/8, 1/16, 1/32, 1/128, 1]
-    ]
     
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var tspNum: UILabel!
@@ -32,6 +24,18 @@ class EquivalenciesViewController: UIViewController {
     var amountToPass: String!
     var amountType: String!
     var amount: Double!
+    var results: [Double] = []
+    
+    func calculate(amount: Double, type: String) -> [Double]! {
+        let typeArray: [Double] = ConversionAccess.measurements[type]!
+        
+        for var index = 0; index < typeArray.count; index++ {
+            let valueAtIndex = typeArray[index]
+            let number = valueAtIndex * amount
+            results += [number]
+        }
+        return results
+    }
  
 
     override func viewDidLoad() {
@@ -39,8 +43,10 @@ class EquivalenciesViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        println(amountType)
-        println(amountToPass)
+        //println(amountType)
+        //println(amountToPass)
+        
+        self.amountType = ConversionAccess.measurementType
         
         amount = (amountToPass as NSString).doubleValue //convert String from numberField to Double for calculations
         
@@ -52,10 +58,19 @@ class EquivalenciesViewController: UIViewController {
        // println(calculateAmounts![0])
         
         
-        //var selectedType = measurements[amountType]
+        //let selectedType = measurements[amountType]
         
         self.amountLabel.text = "\(amountToPass) \(amountType) is equal to:"
-        //self.tspNum.text = String(amount * selectedType![0])
+        
+        let calculations = calculate(amount, type: amountType)
+        self.tspNum.text = NSString(format: "%.2f", calculations[0])
+        self.tbspNum.text = NSString(format: "%.2f", calculations[1])
+        self.cupNum.text = NSString(format: "%.2f", calculations[2])
+        self.pintNum.text = NSString(format: "%.2f", calculations[3])
+        self.quartNum.text = NSString(format: "%.2f", calculations[4])
+        self.gallonNum.text = NSString(format: "%.2f", calculations[5])
+        self.flozNum.text = NSString(format: "%.2f", calculations[6])
+        
     }
 
     override func didReceiveMemoryWarning() {

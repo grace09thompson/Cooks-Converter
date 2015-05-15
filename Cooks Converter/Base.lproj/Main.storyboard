@@ -41,7 +41,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="tspButtonPressed:" destination="SMX-M3-DZb" eventType="touchUpInside" id="X4T-GA-FwE"/>
                                     <segue destination="Fcx-H9-NjR" kind="push" identifier="showEquivalenciesSegue" id="KIo-9P-hhQ"/>
                                 </connections>
                             </button>
@@ -93,6 +92,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Uam-cr-2FK" appends="YES" id="cGC-vU-ZaB"/>
+                                    <segue destination="SMX-M3-DZb" kind="push" id="Zbt-10-48e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZQ-eG-eav">
@@ -505,4 +505,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="a0o-bf-7Qe"/>
+    </inferredMetricsTieBreakers>
 </document>
