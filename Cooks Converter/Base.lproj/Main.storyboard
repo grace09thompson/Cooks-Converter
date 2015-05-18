@@ -41,7 +41,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Fcx-H9-NjR" kind="push" identifier="showEquivalenciesSegue" id="KIo-9P-hhQ"/>
+                                    <action selector="showEquivalencies:" destination="SMX-M3-DZb" eventType="touchUpInside" id="kGc-Xp-bcM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdA-01-KFL">
@@ -63,7 +63,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="3PV-Hz-MbJ" appends="YES" id="clP-uN-dlB"/>
+                                    <action selector="showEquivalencies:" destination="SMX-M3-DZb" eventType="touchUpInside" id="VaQ-af-o7K"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjH-eO-QWw">
@@ -91,8 +91,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Uam-cr-2FK" appends="YES" id="cGC-vU-ZaB"/>
-                                    <segue destination="SMX-M3-DZb" kind="push" id="Zbt-10-48e"/>
+                                    <action selector="showEquivalencies:" destination="SMX-M3-DZb" eventType="touchUpInside" id="2SS-Qw-3c2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZQ-eG-eav">
@@ -114,7 +113,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Roe-gM-Ksi" appends="YES" id="oGy-hH-Non"/>
+                                    <action selector="showEquivalencies:" destination="SMX-M3-DZb" eventType="touchUpInside" id="9Hg-B0-oI7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7E-xd-shF">
@@ -136,29 +135,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="CiA-3d-9dT" appends="YES" id="btO-2r-fpY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ju-1Z-rja">
-                                <rect key="frame" x="166" y="463" width="138" height="80"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="138" id="H5o-hp-amm"/>
-                                    <constraint firstAttribute="height" constant="80" id="kUg-EL-coC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="35"/>
-                                <state key="normal" title="gallon">
-                                    <color key="titleColor" red="0.51134008289999999" green="0.03560984146" blue="0.15114335600000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="bOk-Mj-tV9" appends="YES" id="WtG-O8-hci"/>
+                                    <action selector="showEquivalencies:" destination="SMX-M3-DZb" eventType="touchUpInside" id="Ctq-Wj-QWe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Io-D4-cH4">
@@ -180,7 +157,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="fYr-6U-9a6" appends="YES" id="KA6-mD-9md"/>
+                                    <action selector="showEquivalencies:" destination="SMX-M3-DZb" eventType="touchUpInside" id="YPk-FN-Ebh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cooking Equivalencies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdg-ty-P6s">
@@ -216,6 +193,28 @@
                                     <action selector="textFieldDoneEditing:" destination="SMX-M3-DZb" eventType="editingDidEndOnExit" id="5yf-WB-dRq"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ju-1Z-rja">
+                                <rect key="frame" x="166" y="463" width="138" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="H5o-hp-amm"/>
+                                    <constraint firstAttribute="height" constant="80" id="kUg-EL-coC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="35"/>
+                                <state key="normal" title="gallon">
+                                    <color key="titleColor" red="0.51134008289999999" green="0.03560984146" blue="0.15114335600000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showEquivalencies:" destination="SMX-M3-DZb" eventType="touchUpInside" id="4AJ-gf-vll"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.9867150010164123" blue="0.84057560488317562" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -251,41 +250,18 @@
                         <outlet property="quartButton" destination="oZQ-eG-eav" id="JTW-bB-Uqk"/>
                         <outlet property="tbspButton" destination="zjH-eO-QWw" id="k8i-g8-lAe"/>
                         <outlet property="tspButton" destination="3tb-vC-Niu" id="ZKU-Ay-IrZ"/>
+                        <segue destination="Fcx-H9-NjR" kind="push" identifier="showEquivalenciesSegue" id="RJJ-DY-ViD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9W-0l-pdy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Uam-cr-2FK">
-                    <connections>
-                        <action selector="showEquivalencies:" destination="SMX-M3-DZb" id="S3H-ZD-PrX"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="3PV-Hz-MbJ">
-                    <connections>
-                        <action selector="showEquivalencies:" destination="SMX-M3-DZb" id="uK8-pN-dZB"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="CiA-3d-9dT">
-                    <connections>
-                        <action selector="showEquivalencies:" destination="SMX-M3-DZb" id="FYb-u6-Gwt"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="Roe-gM-Ksi">
-                    <connections>
-                        <action selector="showEquivalencies:" destination="SMX-M3-DZb" id="4Lu-b8-8or"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="fYr-6U-9a6">
-                    <connections>
-                        <action selector="showEquivalencies:" destination="SMX-M3-DZb" id="6sy-sd-6Bj"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="bOk-Mj-tV9">
-                    <connections>
-                        <action selector="showEquivalencies:" destination="SMX-M3-DZb" id="NN9-1B-5eC"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Uam-cr-2FK"/>
+                <tapGestureRecognizer id="3PV-Hz-MbJ"/>
+                <tapGestureRecognizer id="CiA-3d-9dT"/>
+                <tapGestureRecognizer id="Roe-gM-Ksi"/>
+                <tapGestureRecognizer id="fYr-6U-9a6"/>
+                <tapGestureRecognizer id="bOk-Mj-tV9"/>
             </objects>
-            <point key="canvasLocation" x="837" y="518"/>
+            <point key="canvasLocation" x="868" y="518"/>
         </scene>
         <!--Equivalencies View Controller-->
         <scene sceneID="qVF-Ko-XHx">
@@ -505,7 +481,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="a0o-bf-7Qe"/>
-    </inferredMetricsTieBreakers>
 </document>

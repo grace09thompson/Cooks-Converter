@@ -10,12 +10,12 @@ import UIKit
 import QuartzCore
 
 
-class ConverterMainPageViewController: UIViewController {
+class ConverterMainPageViewController: UIViewController, UITextFieldDelegate {
     
     var number: String!
     var measurementType: String!
     
-    var buttonsArray: [UIButton] = []
+    var buttonsArray: [UIButton] = [] //create empty array to adjust format settings on all buttons simultaneously
     
     @IBOutlet weak var tspButton: UIButton!
     @IBOutlet weak var tbspButton: UIButton!
@@ -27,7 +27,7 @@ class ConverterMainPageViewController: UIViewController {
     
     
     
-    @IBOutlet weak var numberField: UITextField!
+    @IBOutlet weak var numberField: UITextField! //textfield for number input
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,60 +49,46 @@ class ConverterMainPageViewController: UIViewController {
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.blackColor().CGColor
         }
-        
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+       
     }
     
-    @IBAction func textFieldDoneEditing(sender: UITextField) {
-        //ConversionAccess.amount = numberField.text
-        //number = ConversionAccess.amount
+    @IBAction func textFieldDoneEditing(sender: UITextField) { //close keyboard. possibly not necessary since number pad has no 'done' button.
         sender.resignFirstResponder()
     }
     
     
-    @IBAction func backgroundTap(sender: UIControl) {
-        ConversionAccess.amount = numberField.text
-        number = ConversionAccess.amount
+    @IBAction func backgroundTap(sender: UIControl) { //closes keyboard theoretically by touching outside of the keyboard field area.
+        ConversionAccess.amount = numberField.text //send user specified amount to global variable file.
+        number = ConversionAccess.amount //set number amount in current file to user specified amount.
         numberField.resignFirstResponder()
     }
-    
-    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let equivalenciesDetailController = segue.destinationViewController as EquivalenciesViewController
         
-        if let buttonTitle = (sender as? UIButton)?.titleLabel?.text {
-            measurementType = buttonTitle
-            ConversionAccess.measurementType = measurementType
-            //equivalenciesDetailController.amountType = buttonTitle
+        equivalenciesDetailController.amountToPass = number //also sends number to next view controller, might be unnecessary if data is collected from global variable instead.
+
+          }
+    
+    func getButtonType(sender: UIButton) { //function to get the title label of the button pressed to send the measurement type along.
+        var currentTitle: String? {
+            get {
+                return sender.titleLabel?.text
+            }
         }
-        equivalenciesDetailController.amountToPass = number
-        println(number)
-        println(measurementType)
-        
-        
-        //if segue.identifier == "showEquivalenciesSegue" {
-            
-            //let buttonPressed = sender!.view as UIButton
-            //if let index = find(buttonsArray, buttonPressed) {
-                //let equivalenciesDetailController = segue.destinationViewController as EquivalenciesViewController
-                //pass information to the next view for calculations
-               // equivalenciesDetailController.amountToPass = number
-               // equivalenciesDetailController.amountType = buttonPressed
-                
-               // println(number)
-               // println(buttonPressed)
-          //  }
-            
-       // }
-    }
+        measurementType = currentTitle
+        ConversionAccess.measurementType = measurementType //update measurement type to global variable file.
     
-    @IBAction func showEquivalencies(sender: UIButton) {
+            }
     
+    @IBAction func showEquivalencies(sender: UIButton) { //gets information for next view and transitions with segue.
+        getButtonType(sender)
+        
         performSegueWithIdentifier("showEquivalenciesSegue", sender: sender)
     }
 

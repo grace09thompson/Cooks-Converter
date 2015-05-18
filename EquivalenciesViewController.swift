@@ -21,12 +21,12 @@ class EquivalenciesViewController: UIViewController {
     @IBOutlet weak var flozNum: UILabel!
     
     
-    var amountToPass: String!
+    var amountToPass: String! //amount passed from text field, still as a String
     var amountType: String!
     var amount: Double!
     var results: [Double] = []
     
-    func calculate(amount: Double, type: String) -> [Double]! {
+    func calculate(amount: Double, type: String) -> [Double]! { //function finds the proper array from the measurements dictionary upon specified type, multiplies each element by the user specified amount, and writes results to a new array. Results are the corresponding equivalent of specified amount in various types of measurement.
         let typeArray: [Double] = ConversionAccess.measurements[type]!
         
         for var index = 0; index < typeArray.count; index++ {
@@ -41,26 +41,12 @@ class EquivalenciesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
-        //println(amountType)
-        //println(amountToPass)
         
         self.amountType = ConversionAccess.measurementType
         
         amount = (amountToPass as NSString).doubleValue //convert String from numberField to Double for calculations
         
-        //var selectedType = measurements[amountType]
-        //println(selectedType![0])
-        //var measurementsDictionary = ConversionAccess.measurements
-        //var calculateAmounts = measurementsDictionary[amountType]
-        
-       // println(calculateAmounts![0])
-        
-        
-        //let selectedType = measurements[amountType]
-        
-        self.amountLabel.text = "\(amountToPass) \(amountType) is equal to:"
+        self.amountLabel.text = "\(amountToPass) \(amountType) is equal to:" 
         
         let calculations = calculate(amount, type: amountType)
         self.tspNum.text = NSString(format: "%.2f", calculations[0])
